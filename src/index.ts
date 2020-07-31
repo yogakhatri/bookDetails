@@ -1,4 +1,4 @@
-import { sequelize } from './db/db';
+import sequelize  from './sequelize';
 import{} from './models/Author.model'
 var express = require('express');
 var app = express();

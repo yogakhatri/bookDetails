@@ -1,6 +1,7 @@
 import { Column, Table, BelongsToMany,PrimaryKey, CreatedAt, UpdatedAt,Model } from "sequelize-typescript";
 import { Author } from "./Author.model";
 import { BookAuthor } from "./BookAuthor.model";
+import Sequelize from '../sequelize'
 
 @Table
 export class Book extends Model<Book> {
@@ -31,3 +32,5 @@ export class Book extends Model<Book> {
   @BelongsToMany(() => Author, () => BookAuthor)
   authors!: Author[];
 }
+
+// Sequelize.addModels([Book])

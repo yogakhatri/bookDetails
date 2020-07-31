@@ -1,4 +1,5 @@
 import { Sequelize } from 'sequelize'
+import { any } from 'sequelize/types/lib/operators';
 
 // Passing parameters separately
 export const sequelize = new Sequelize('book_details', 'root', '', {
