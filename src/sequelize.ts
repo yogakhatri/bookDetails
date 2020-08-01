@@ -1,6 +1,4 @@
 import { Sequelize } from 'sequelize-typescript';
-import * as path from 'path'
-
 
 export default new Sequelize({
         database: 'book_details',
@@ -8,7 +6,7 @@ export default new Sequelize({
         username: 'root',
         password: '',
         host: 'localhost',
-        models: [__dirname + '/src/models'],
+        models: [__dirname + '/models'],
     })
 
     

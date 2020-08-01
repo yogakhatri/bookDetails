@@ -1,5 +1,4 @@
 import sequelize  from './sequelize';
-import{} from './models/Author.model'
 var express = require('express');
 var app = express();
 
@@ -8,6 +7,5 @@ app.get('/', function (req, res) {
 })
 
 app.listen(8081,async  function () {
-    console.log(sequelize)
     await sequelize.sync();
 })

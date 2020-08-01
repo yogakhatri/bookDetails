@@ -1,14 +1,18 @@
-import { BelongsToMany, Column, CreatedAt, Model, Table, UpdatedAt, PrimaryKey } from 'sequelize-typescript';
-import { BookAuthor } from './BookAuthor.model';
-import { Book } from './Book.model';
-import Sequelize from '../sequelize'
+import { BelongsToMany, Column, CreatedAt, Model, Table, UpdatedAt } from 'sequelize-typescript';
+import BookAuthor from './BookAuthor.model';
+import Book from './Book.model';
 
 @Table
-export class Author extends Model<Author> {
-   
-    @PrimaryKey
+export default class Author extends Model<Author> {
+
     @Column
-    id!: string;
+    name!: string;
+
+    @Column
+    birthYear!: number;
+
+    @Column
+    nationality!: string;
 
     @CreatedAt
     creationDate!: Date;
@@ -17,14 +21,6 @@ export class Author extends Model<Author> {
     updatedOn!: Date;
 
     @BelongsToMany(() => Book, () => BookAuthor)
-    @Column
     books!: Book[];
 
-    @Column
-    birthYear!: number;
-
-    @Column
-    nationality!: number
 }
-
-// Sequelize.addModels([Author])

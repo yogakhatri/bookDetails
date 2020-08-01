@@ -1,10 +1,9 @@
 import { Model, Column, Table, ForeignKey } from "sequelize-typescript";
-import { Author } from "./Author.model";
-import { Book } from "./Book.model";
-import Sequelize from '../sequelize'
+import  Author  from "./Author.model";
+import  Book  from "./Book.model";
 
 @Table
-export class BookAuthor extends Model<BookAuthor> {
+export default class BookAuthor extends Model<BookAuthor> {
 
     @ForeignKey(() => Book)
     @Column
@@ -14,5 +13,3 @@ export class BookAuthor extends Model<BookAuthor> {
     @Column
     authorId!: number;
 }
-
-// Sequelize.addModels([BookAuthor])
