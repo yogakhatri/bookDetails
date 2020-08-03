@@ -11,7 +11,14 @@ export default class BookController {
 
     addAuthors(req: Request, res: Response, next: NextFunction) {
         AuthorRepo.addAuthor(req.body)
-            .then(result => res.json(result))
+            .then(result =>{
+                return res.json(result)})
             .catch(err => console.log("error while adding author"))
+    }
+
+    getAuthorById(req: Request, res: Response, next: NextFunction) {
+        AuthorRepo.getAuthorById(req.params.id)
+            .then(result => res.json(result))
+            .catch(err => console.log("error while fetching author with id " + req.params.id))
     }
 }

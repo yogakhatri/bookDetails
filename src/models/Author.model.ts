@@ -22,5 +22,4 @@ export default class Author extends Model<Author> {
 
     @BelongsToMany(() => Book, () => BookAuthor)
     books!: Book[];
-
 }

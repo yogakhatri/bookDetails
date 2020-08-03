@@ -10,10 +10,12 @@ export default class Routes {
 
         // Routes for Authors
         app.get('/api/authors/', this.authorController.getAllAuthors)
-        app.post('api/addAuthor', this.authorController.addAuthors)
+        app.post('/api/addAuthor', this.authorController.addAuthors)
+        app.get('/api/authors/:id', this.authorController.getAuthorById)
 
         // Routes for Books
         app.get('/api/books/', this.bookController.getAllBooks)
-        app.post('api/addBook', this.bookController.addBook)
+        app.post('/api/addBook', this.bookController.addBook)
+        app.get('/api/books/:id', this.bookController.getBooksById)
     }
 }

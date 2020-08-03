@@ -12,7 +12,6 @@
 import { Application } from "express";
 import * as bodyParser from "body-parser";
 import morgan from "morgan";
-import * as winston from "winston";
 import * as fs from "fs";
 import * as path from "path";
 import { WriteStream } from "fs";
@@ -28,14 +27,9 @@ export default class Server {
             path.join(__dirname, "./logs/access.log"),
             { flags: "a" }
         );
+
         app.use(morgan("combined", { stream: accessLogStream }));
         app.use(bodyParser.json());
 
     }
 }
-
-process.on("beforeExit", function (err) {
-    console.log("wintson is running");
-    winston.error(JSON.stringify(err));
-    console.error(err);
-});

@@ -6,10 +6,10 @@ import  Book  from "./Book.model";
 export default class BookAuthor extends Model<BookAuthor> {
 
     @ForeignKey(() => Book)
-    @Column
+    @Column({unique:"book_author"})
     bookId!: number;
 
     @ForeignKey(() => Author)
-    @Column
+    @Column({unique:"book_author"})
     authorId!: number;
 }
