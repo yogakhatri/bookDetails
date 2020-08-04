@@ -1,9 +1,9 @@
 import { BelongsToMany, Column, CreatedAt, Model, Table, UpdatedAt } from 'sequelize-typescript';
-import BookAuthor from './BookAuthor.model';
-import Book from './Book.model';
+import { BookAuthor } from './index';
+import { Book } from './index';
 
 @Table
-export default class Author extends Model<Author> {
+export class Author extends Model<Author> {
 
     @Column
     name!: string;

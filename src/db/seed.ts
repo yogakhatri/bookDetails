@@ -1,5 +1,5 @@
-import Book from '../models/Book.model'
-import Author from '../models/Author.model'
+import Book from '../models/book.model'
+import Author from '../models/author.model'
 import sequelize from '../sequelize'
 
 function seeding() {

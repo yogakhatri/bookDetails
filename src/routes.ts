@@ -1,6 +1,6 @@
 import { Application } from 'express'
-import AuthorController from './controllers/AuthorController'
-import BookController from './controllers/BookController'
+import { AuthorController } from './controllers'
+import { BookController } from './controllers'
 
 export default class Routes {
     authorController = new AuthorController();

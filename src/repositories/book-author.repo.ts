@@ -1,7 +1,7 @@
-import BookAuthor from '../models/BookAuthor.model'
+import { BookAuthor } from '../models'
 
-class BookAuthorRepo {  
-    addBookAuthor(BookAuthorDetails){
+class BookAuthorRepo {
+    addBookAuthor(BookAuthorDetails) {
         console.log("In bookAuthor details")
         return BookAuthor.bulkCreate(BookAuthorDetails)
     }

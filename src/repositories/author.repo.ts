@@ -1,4 +1,4 @@
-import Authors from '../models/Author.model';
+import { Author } from '../models';
 import sequelize from '../sequelize'
 
 class AuthorRepo {
@@ -6,12 +6,12 @@ class AuthorRepo {
 
     getAllAuthors() {
         console.log("Getting all Authors List")
-        return Authors.findAll()
+        return Author.findAll()
     }
 
     addAuthor(authorDetails) {
         console.log("inserting author details " + authorDetails)
-        return Authors.create(authorDetails)
+        return Author.create(authorDetails)
     }
 
     getAuthorById(id) {

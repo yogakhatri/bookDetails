@@ -1,9 +1,9 @@
 import { Request, Response, NextFunction } from "express";
-import BookRepo from '../repositories/BookRepo';
-import BookAuthorRepo from '../repositories/BookAuthorRepo'
+import BookRepo from '../repositories/book.repo';
+import BookAuthorRepo from '../repositories/book-author.repo'
 var _ = require('lodash');
 
-export default class BookController {
+export class BookController {
 
     getAllBooks(req: Request, res: Response, next: NextFunction) {
         BookRepo.getAllBooks()

@@ -1,7 +1,7 @@
 import { Request, Response, NextFunction } from "express";
-import AuthorRepo from '../repositories/AuthorRepo';
+import AuthorRepo from '../repositories/author.repo';
 
-export default class BookController {
+export class AuthorController {
 
     getAllAuthors(req: Request, res: Response, next: NextFunction) {
         AuthorRepo.getAllAuthors()

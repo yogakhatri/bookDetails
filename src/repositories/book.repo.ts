@@ -1,4 +1,4 @@
-import Book from '../models/Book.model';
+import { Book } from '../models';
 import sequelize from '../sequelize'
 
 class BookRepo {
@@ -8,7 +8,7 @@ class BookRepo {
     }
 
     addBook(bookDetails: object) {
-        console.log( bookDetails)
+        console.log(bookDetails)
         return Book.create(bookDetails)
     }
 
